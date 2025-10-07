@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Viva Events - About Us</title>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* Base Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #fafafa;
+      color: #2c3e50;
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.3s ease;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    /* Layout Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Navbar */
+    header.navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 10%;
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo {
+      width: 100px;
+      height: auto;
+    }
+
+    .site-name {
+      font-family: 'Georgia', serif;
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: #d4af37;
+      user-select: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #2c3e50;
+      padding: 6px 10px;
+      border-radius: 6px;
+      position: relative;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #d4af37;
+    }
+
+    .nav-links a.active::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 100%;
+      height: 2px;
+      background-color: #d4af37;
+      border-radius: 2px;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      min-height: 60vh;
+      position: relative;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #373453, #e0c31b, #a981c5);
+      background-size: 400% 400%;
+      animation: gradientShift 12s ease infinite;
+      color: #fff;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .hero-overlay {
+      background: rgba(0,0,0,0.55);
+      padding: 40px 30px;
+      border-radius: 12px;
+      max-width: 800px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      font-family: 'Georgia', serif;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    /* Modern Button */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 38px;
+      background: transparent;
+      color: #382e66;
+      border: 2px solid #2d2c77;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 6px 25px rgba(67, 68, 92, 0.3);
+      position: relative;
+      overflow: hidden;
+      user-select: none;
+    }
+
+    .btn:hover {
+      background: #5e11da;
+      color: #fff;
+      box-shadow: 0 0 20px #ccb8bf, 0 0 40px #79b3da;
+    }
+
+    /* Sections */
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto 40px auto;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #2c3e50;
+      font-family: 'Georgia', serif;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .flex-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      max-width: 320px;
+      flex: 1 1 280px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .card h3 {
+      color: #d4af37;
+      margin-bottom: 12px;
+      font-size: 1.3rem;
+      font-family: 'Georgia', serif;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .card i {
+      color: #d4af37;
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.5;
+      flex-grow: 1;
+    }
+
+    .card h4 {
+      margin-top: 16px;
+      font-style: italic;
+      color: #444;
+      font-size: 1rem;
+      text-align: right;
+    }
+
+    /* Partners Section Paragraph */
+    section:last-of-type .container p {
+      font-size: 1.1rem;
+      color: #444;
+      max-width: 900px;
+      margin: 0 auto;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+  /* ============================= */
+  /* Footer */
+  footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  footer .social a {
+    color: #fff;
+    margin: 0 12px;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+  }
+
+  footer .social a:hover {
+    color: #d4af37;
+  }
+
+  footer p {
+    margin-top: 15px;
+    font-size: 1.5rem;
+  }
+
+  footer p a {
+    color: #ccc;
+  }
+
+  footer p a:hover {
+    color: #d4af37;
+  }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header.navbar {
+        flex-direction: column;
+        gap: 12px;
+        padding: 12px 5%;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .hero {
+        min-height: 50vh;
+        padding: 30px 15px;
+      }
+
+      .hero-overlay {
+        padding: 30px 20px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      section {
+        padding: 40px 15px;
+      }
+
+      .flex-container {
+        gap: 18px;
+      }
+
+      .card {
+        max-width: 100%;
+        flex-basis: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo-container">
+    <img src="logo.png" alt="Viva Events Logo" class="logo" />
+    <span class="site-name">Viva Events</span>
+  </div>
+
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About Us</a></li>
+      <li><a href="packages.html">Packages</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="terms.html">Terms</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-overlay">
+    <h1>About Viva Events</h1>
+    <p>We believe every celebration deserves a special touch. At Viva Events, we start by earning your trust, focusing on creativity, detail, and care.</p>
+    <p>Our goal is simple: to bring people together and make your event memorable, unique, and stress-free.</p>
+    <a href="packages.html" class="btn">View Packages</a>
+  </div>
+</section>
+
+<!-- Mission & Values -->
+<section>
+  <h2>Our Mission & Values</h2>
+  <div class="flex-container">
+    <div class="card">
+      <h3><i class="fas fa-heart"></i> Trust First</h3>
+      <p>We may be new, but our commitment is strong — to earn your confidence by delivering exactly what we promise.</p>
+    </div>
+    <div class="card">
+      <h3><i class="fas fa-lightbulb"></i> Creativity</h3>
+      <p>Every event is designed with fresh ideas, tailored to your personality, culture, and vision.</p>
+    </div>
+    <div class="card">
+      <h3><i class="fas fa-handshake"></i> Dedication</h3>
+      <p>We go above and beyond, ensuring that even the smallest details are handled with care and passion.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section>
+  <h2>Our Team</h2>
+  <div class="flex-container">
+    <div class="card">
+      <h3><i class="fas fa-users"></i> Driven by Passion</h3>
+      <p>We are a small but dedicated team that treats every event as if it were our own celebration.</p>
+    </div>
+    <div class="card">
+      <h3><i class="fas fa-star"></i> Client-Centered</h3>
+      <p>Instead of talking about “years of experience,” we let our honesty, hard work, and personal approach speak for us.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Promise -->
+<section>
+  <h2>Our Promise to You</h2>
+  <div class="flex-container">
+    <div class="card">
+      <p>“We may be new, but we are here to make a difference. Our promise is simple: your happiness is our success.”</p>
+      <h4>- Viva Events Team</h4>
+    </div>
+  </div>
+</section>
+
+<!-- Partners -->
+<section>
+  <h2>Our Approach to Collaboration</h2>
+  <div class="flex-container">
+    <div class="card">
+      <p>At Viva Events, we carefully select collaborators based on quality and shared values. Whether venues, caterers, or entertainers, our priority is ensuring your event is seamless and exceptional.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer role="contentinfo">
+  <div class="social">
+    <p class="connect">Connect with us</p>
+    <div>
+      <a
+        href="https://www.facebook.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Facebook"
+      >
+        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+      </a>
+      <a
+        href="https://www.instagram.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+      >
+        <i class="fab fa-instagram" aria-hidden="true"></i>
+      </a>
+      <a
+        href="https://www.tiktok.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="TikTok"
+      >
+        <i class="fab fa-tiktok" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+  <p>
+    <a href="terms.html">Terms & Conditions</a> | © 2025 Viva Events
+  </p>
+</footer>
+
+</body>
+</html>

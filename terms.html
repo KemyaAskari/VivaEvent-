@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viva Events - Terms & Conditions</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+  /* ============================= */
+  /* Base Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: #fafafa;
+    color: #2c3e50;
+    line-height: 1.7;
+    font-size: 1rem;
+    padding-top: 80px; /* Add padding so content isn't hidden behind navbar */
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+  }
+
+  /* ============================= */
+  /* Navbar */
+  header.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 10%;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  /* Logo container with image + site name */
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .logo {
+    width: 80px;
+    height: auto;
+  }
+
+  .site-name {
+    font-weight: bold;
+    font-size: 1.6rem;
+    color: #d4af37;
+    font-family: 'Georgia', serif;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 22px;
+  }
+
+  .nav-links li {
+    list-style: none;
+  }
+
+  .nav-links li a {
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 6px;
+    color: #2c3e50;
+    position: relative;
+  }
+
+  .nav-links li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #d4af37;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+  }
+
+  .nav-links li a:hover::after,
+  .nav-links li a.active::after {
+    width: 100%;
+  }
+
+  /* ============================= */
+  /* Terms Container */
+  .container {
+    max-width: 950px;
+    margin: 50px auto;
+    padding: 40px 28px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+
+  /* Header */
+  .terms-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .terms-header h1 {
+    font-size: 2.5rem;
+    font-family: 'Georgia', serif;
+    color: #d4af37;
+    margin-bottom: 15px;
+  }
+
+  .terms-header p {
+    color: #7f8c8d;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* Terms Content */
+  .terms-content h3 {
+    font-size: 1.3rem;
+    margin: 30px 0 12px;
+    color: #2c3e50;
+    font-family: 'Georgia', serif;
+    border-left: 4px solid #d4af37;
+    padding-left: 12px;
+    position: relative;
+  }
+
+  .terms-content h3::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background: #eee;
+    margin-top: 10px;
+  }
+
+  .terms-content p,
+  .terms-content li {
+    color: #555;
+    margin-bottom: 16px;
+  }
+
+  .terms-content ul,
+  .terms-content ol {
+    padding-left: 25px;
+    margin-bottom: 20px;
+  }
+
+  .terms-content ul li,
+  .terms-content ol li {
+    color: #444;
+    margin-bottom: 10px;
+  }
+
+  /* ============================= */
+  /* Footer */
+  footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  footer .social a {
+    color: #fff;
+    margin: 0 12px;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+  }
+
+  footer .social a:hover {
+    color: #d4af37;
+  }
+
+  footer p {
+    margin-top: 15px;
+    font-size: 1.5rem;
+  }
+
+  footer p a {
+    color: #ccc;
+  }
+
+  footer p a:hover {
+    color: #d4af37;
+  }
+  /* ============================= */
+  /* Responsive */
+  @media (max-width: 768px) {
+    header.navbar {
+      flex-direction: column;
+      gap: 12px;
+      padding: 12px 5%;
+    }
+
+    .nav-links {
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+      align-items: center;
+    }
+
+    .terms-header h1 {
+      font-size: 2rem;
+    }
+
+    /* Adjust logo size on small screens */
+    .logo {
+      width: 100px;
+      height: auto;
+    }
+
+    .site-name {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: #d4af37;
+      font-family: 'Georgia', serif;
+    }
+  }
+</style>
+
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo-container">
+    <img src="logo.png" alt="Viva Events Logo" class="logo">
+    <span class="site-name">Viva Events</span>
+  </div>
+
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="packages.html">Packages</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="terms.html" class="active">Terms</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+<section class="container terms-content">
+  <div class="terms-header">
+    <h1>Terms & Conditions</h1>
+    <p>
+      These Terms & Conditions are designed to comply with relevant 
+      <strong>Australian federal and state legislation</strong>. 
+      By booking our services, you agree to the following terms, which are in line with the 
+      <strong>Australian Consumer Law (ACL)</strong> and other key regulations.
+    </p>
+  </div>
+
+  <h3>1. Bookings & Payments</h3>
+  <ul>
+    <li>A <strong>50% deposit</strong> is required to confirm your booking.</li>
+    <li>The balance must be paid in full <strong>7 days prior</strong> to the event.</li>
+    <li>All transactions comply with the <strong>Competition and Consumer Act 2010 (Cth)</strong> 
+        and the <strong>Electronic Transactions Act 1999 (Cth)</strong>.</li>
+  </ul>
+
+  <h3>2. Cancellations & Refunds</h3>
+  <ul>
+    <li>Cancellations made more than <strong>30 days</strong> prior will receive a full refund.</li>
+    <li>Cancellations within <strong>14–30 days</strong> incur a 25% cancellation fee.</li>
+    <li>Cancellations within <strong>14 days</strong> may forfeit the deposit.</li>
+    <li>Refunds are managed under the <strong>Australian Consumer Law</strong> and the 
+        <strong>Fair Trading Act 1987 (NSW)</strong>.</li>
+  </ul>
+
+  <h3>3. Venue & Legal Compliance</h3>
+  <ul>
+    <li>Clients must ensure the venue permits external suppliers.</li>
+    <li>We comply with <strong>Sydney Council regulations</strong>, the 
+        <strong>Environmental Planning and Assessment Act 1979 (NSW)</strong>, and 
+        <strong>Local Government Act 1993 (NSW)</strong>.</li>
+  </ul>
+
+  <h3>4. Health & Safety</h3>
+  <ul>
+    <li>All equipment meets <strong>Australian Standards (AS/NZS)</strong>.</li>
+    <li>We operate under the <strong>Work Health and Safety Act 2011 (NSW)</strong> and 
+        <strong>Public Health Act 2010 (NSW)</strong>.</li>
+    <li>Clients and staff must comply with <strong>SafeWork NSW</strong> guidelines.</li>
+  </ul>
+
+  <h3>5. Equipment & Property</h3>
+  <ul>
+    <li>All hired equipment remains Viva Events’ property.</li>
+    <li>Clients are liable for loss or damage unless it falls under the guarantees of the 
+        <strong>Australian Consumer Law</strong>.</li>
+    <li>Collection and use of client information is in accordance with the 
+        <strong>Privacy Act 1988 (Cth)</strong>.</li>
+  </ul>
+
+  <h3>6. Alcohol, Food & Safety Laws</h3>
+  <ul>
+    <li>If alcohol is served, clients must comply with the <strong>Liquor Act 2007 (NSW)</strong>.</li>
+    <li>Catering services follow the <strong>Food Act 2003 (NSW)</strong> and relevant food safety standards.</li>
+    <li>Noise levels must comply with the <strong>Protection of the Environment Operations Act 1997 (NSW)</strong>.</li>
+  </ul>
+
+  <h3>7. Limitation of Liability</h3>
+  <ul>
+    <li>We are not liable for events affected by <strong>natural disasters, pandemics, or government restrictions</strong>.</li>
+    <li>Liability is limited as permitted by the <strong>Competition and Consumer Act 2010 (Cth)</strong>.</li>
+    <li>Insurance requirements are in line with the <strong>Insurance Contracts Act 1984 (Cth)</strong>.</li>
+  </ul>
+
+  <h3>8. Governing Law</h3>
+  <p>
+    These terms are governed by the laws of <strong>New South Wales, Australia</strong>. 
+    Any disputes will be subject to the jurisdiction of the courts of NSW, in compliance with 
+    the <strong>Civil Procedure Act 2005 (NSW)</strong> and relevant federal legislation.
+  </p>
+
+  <h3>9. Key Laws Referenced</h3>
+  <ol>
+    <li>Australian Consumer Law (Schedule 2, Competition and Consumer Act 2010 Cth)</li>
+    <li>Fair Trading Act 1987 (NSW)</li>
+    <li>Competition and Consumer Act 2010 (Cth)</li>
+    <li>Electronic Transactions Act 1999 (Cth)</li>
+    <li>Environmental Planning and Assessment Act 1979 (NSW)</li>
+    <li>Local Government Act 1993 (NSW)</li>
+    <li>Work Health and Safety Act 2011 (NSW)</li>
+    <li>Public Health Act 2010 (NSW)</li>
+    <li>Privacy Act 1988 (Cth)</li>
+    <li>Liquor Act 2007 (NSW)</li>
+    <li>Food Act 2003 (NSW)</li>
+    <li>Protection of the Environment Operations Act 1997 (NSW)</li>
+    <li>Insurance Contracts Act 1984 (Cth)</li>
+    <li>Civil Procedure Act 2005 (NSW)</li>
+    <li>Contracts Review Act 1980 (NSW)</li>
+  </ol>
+</section>
+
+<!-- Footer -->
+<footer role="contentinfo">
+  <div class="social">
+    <p class="connect">Connect with us</p>
+    <div>
+      <a
+        href="https://www.facebook.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Facebook"
+      >
+        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+      </a>
+      <a
+        href="https://www.instagram.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+      >
+        <i class="fab fa-instagram" aria-hidden="true"></i>
+      </a>
+      <a
+        href="https://www.tiktok.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="TikTok"
+      >
+        <i class="fab fa-tiktok" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+  <p>
+    <a href="terms.html">Terms & Conditions</a> | © 2025 Viva Events
+  </p>
+</footer>
+  </footer>
+</body>
+</html>

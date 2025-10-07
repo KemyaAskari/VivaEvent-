@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Viva Events - Contact Us</title>
+  <meta name="description" content="Contact Viva Events - Reach us for enquiries, bookings or event information." />
+  <meta name="keywords" content="Viva Events, Contact, Event Booking, Sydney Events" />
+  <meta name="author" content="Viva Events" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #f5f5f7;
+      color: #2c3e50;
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.3s ease;
+    }
+
+    /* Navbar */
+    header.navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 10%;
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-image {
+      width: 100px;
+      height: auto;
+    }
+
+    .logo-text {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #d4af37;
+      font-family: 'Georgia', serif;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+    }
+
+    .nav-links li {
+      list-style: none;
+    }
+
+    .nav-links li a {
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 6px;
+      position: relative;
+      transition: all 0.3s ease;
+      color: #2c3e50;
+    }
+
+    .nav-links li a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #d4af37;
+      transition: width 0.3s;
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+    }
+
+    .nav-links li a:hover::after,
+    .nav-links li a.active::after {
+      width: 100%;
+    }
+
+    /* Hero */
+    .hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      min-height: 50vh;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #373453, #e0c31b, #a981c5);
+      background-size: 400% 400%;
+      animation: gradientShift 12s ease infinite;
+      color: #fff;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    .container {
+      max-width: 950px;
+      margin: -60px auto 50px;
+      padding: 40px 28px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    }
+
+    .get-in-touch {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+
+    .get-in-touch .box {
+      flex: 1;
+      min-width: 250px;
+      background: #f9f9f9;
+      border-radius: 12px;
+      padding: 25px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .get-in-touch .box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      border: 2px solid #5e11da;
+    }
+
+    .get-in-touch i {
+      font-size: 2rem;
+      color: #d4af37;
+      margin-bottom: 12px;
+    }
+
+    .get-in-touch h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+
+    .get-in-touch p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .contact-form label {
+      font-weight: 600;
+      color: #2c3e50;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 14px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      font-size: 1rem;
+      transition: border 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #5e11da;
+      outline: none;
+      box-shadow: 0 0 10px rgba(94,17,218,0.4);
+    }
+
+    .contact-form button {
+      padding: 16px;
+      border: none;
+      border-radius: 8px;
+      background: #2d2c77; /* Added background */
+      color: #fff; /* Changed to white for contrast */
+      font-weight: 600;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 20px rgba(67, 68, 92, 0.3);
+      position: relative;
+      overflow: hidden;
+      border: 2px solid transparent; /* Removed solid border, transparent now */
+    }
+
+    .contact-form button:hover {
+      background: #5e11da;
+      color: #fff;
+      box-shadow: 0 0 20px #ccb8bf, 0 0 40px #79b3da;
+      border-color: #5e11da;
+    }
+
+    #form-message {
+      font-weight: bold;
+      display: none;
+      padding: 10px;
+      border-radius: 6px;
+      margin-top: 10px;
+    }
+
+  /* ============================= */
+  /* Footer */
+  footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  footer .social a {
+    color: #fff;
+    margin: 0 12px;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+  }
+
+  footer .social a:hover {
+    color: #d4af37;
+  }
+
+  footer p {
+    margin-top: 15px;
+    font-size: 1.5rem;
+  }
+
+  footer p a {
+    color: #ccc;
+  }
+
+  footer p a:hover {
+    color: #d4af37;
+  }
+
+
+    @media (max-width: 768px) {
+      header.navbar {
+        flex-direction: column;
+        gap: 12px;
+        padding: 12px 5%;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .get-in-touch {
+        flex-direction: column;
+      }
+
+      .hero h1 {
+        font-size: 24px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar" role="banner">
+    <div class="logo-container">
+      <img src="logo.png" alt="Viva Events Logo" class="logo-image" />
+      <div class="logo-text">Viva Events</div>
+    </div>
+    <nav role="navigation" aria-label="Primary navigation">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+        <li><a href="terms.html">Terms</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" role="region" aria-labelledby="hero-title">
+    <div>
+      <h1 id="hero-title">Get in Touch</h1>
+      <p>We’d love to hear from you! Fill out the form or use the contact options below.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="container" role="main">
+    <div class="get-in-touch">
+      <div class="box" aria-label="Call Us contact info">
+        <i class="fas fa-phone-alt" aria-hidden="true"></i>
+        <h3>Call Us</h3>
+        <p>+61 123 456 789</p>
+      </div>
+      <div class="box" aria-label="Email contact info">
+        <i class="fas fa-envelope" aria-hidden="true"></i>
+        <h3>Email</h3>
+        <p>info@vivaevents.com</p>
+      </div>
+      <div class="box" aria-label="Visit Us contact info">
+        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+        <h3>Visit Us</h3>
+        <p>123 Event Street, Sydney, NSW</p>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <form class="contact-form" id="contactForm" novalidate>
+      <div>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true" />
+      </div>
+      <div>
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" required aria-required="true" />
+      </div>
+      <div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" placeholder="Your Message" required aria-required="true"></textarea>
+      </div>
+      <button type="submit" aria-label="Send Message">
+        <i class="fas fa-paper-plane" aria-hidden="true"></i> Send Message
+      </button>
+      <div id="form-message" role="alert" aria-live="polite"></div>
+    </form>
+  </section>
+
+<!-- Footer -->
+<footer role="contentinfo">
+  <div class="social">
+    <p class="connect">Connect with us</p>
+    <div>
+      <a
+        href="https://www.facebook.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Facebook"
+      >
+        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+      </a>
+      <a
+        href="https://www.instagram.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+      >
+        <i class="fab fa-instagram" aria-hidden="true"></i>
+      </a>
+      <a
+        href="https://www.tiktok.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="TikTok"
+      >
+        <i class="fab fa-tiktok" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+  <p>
+    <a href="terms.html">Terms & Conditions</a> | © 2025 Viva Events
+  </p>
+</footer>
+  <!-- JS to handle basic form submission -->
+  <script>
+    const form = document.getElementById("contactForm");
+    const messageBox = document.getElementById("form-message");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // Simple validation (optional enhancement)
+      if (!form.checkValidity()) {
+        messageBox.style.display = "block";
+        messageBox.style.color = "red";
+        messageBox.innerText = "Please fill out all required fields correctly.";
+        return;
+      }
+
+      messageBox.style.display = "block";
+      messageBox.style.color = "green";
+      messageBox.innerText = "Thank you for contacting us! We'll get back to you soon.";
+      form.reset();
+    });
+  </script>
+</body>
+</html>

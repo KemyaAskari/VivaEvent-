@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Viva Events - Packages</title>
+
+<!-- Your main stylesheet -->
+<link rel="stylesheet" href="style.css" />
+
+<!-- Font Awesome CDN for social media icons -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+
+<style>
+  /* ============================= */
+  /* Base Reset */
+  /* ============================= */
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: #fafafa;
+    color: #2c3e50;
+    line-height: 1.7;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  /* ============================= */
+  /* Layout Container */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* ============================= */
+  /* Navbar */
+  header.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 10%;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(146, 134, 134, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #d4af37;
+    font-family: 'Georgia', serif;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 22px;
+  }
+
+  .nav-links li a {
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 6px;
+  }
+
+  .nav-links li a:hover,
+  .nav-links li a.active {
+    background: #d4af37;
+    color: #fff;
+  }
+
+  /* ============================= */
+  /* Hero Section */
+  .hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(to right bottom, #34495e, #2c3e50);
+    color: #fff;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    font-family: 'Georgia', serif;
+    margin-bottom: 15px;
+  }
+
+  .hero p {
+    max-width: 700px;
+    margin: 0 auto 25px;
+    font-size: 1.2rem;
+    color: #ecf0f1;
+  }
+
+  .hero .btn {
+    padding: 12px 28px;
+    background: #d4af37;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .hero .btn:hover {
+    background: #c19b2e;
+    transform: translateY(-2px);
+  }
+
+  .logo-container {
+    display: flex;
+    align-items: center; /* vertically center logo and text */
+    gap: 10px; /* space between logo and text */
+  }
+
+  .logo {
+    width: 100px; /* adjust size as needed */
+    height: auto;
+  }
+
+  .site-name {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #d4af37;
+    font-family: 'Georgia', serif;
+  }
+
+  /* ============================= */
+  /* Cards / Packages */
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    margin-top: 60px;
+  }
+
+  .card,
+  .package {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    flex: 1 1 300px;
+    max-width: 340px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card:hover,
+  .package:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  .card h3,
+  .package h2 {
+    color: #d4af37;
+    font-family: 'Georgia', serif;
+    margin-bottom: 12px;
+  }
+
+  .card p,
+  .package p {
+    font-size: 1rem;
+    margin-bottom: 14px;
+  }
+
+  .package ul li,
+  .card ul li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+  }
+
+  .package ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #d4af37;
+    font-weight: bold;
+  }
+
+  /* Buttons */
+  .btn {
+    margin-top: auto;
+    padding: 10px 24px;
+    background: #d4af37;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .btn:hover {
+    background: #c19b2e;
+  }
+
+  /* ============================= */
+  /* Forms */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 480px;
+    margin: 40px auto;
+  }
+
+  form input,
+  form textarea {
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+
+  form input:focus,
+  form textarea:focus {
+    border-color: #d4af37;
+    outline: none;
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+  }
+
+  form button {
+    padding: 12px;
+    background: #d4af37;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  form button:hover {
+    background: #c19b2e;
+  }
+
+  /* ============================= */
+  /* Footer */
+  footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  footer .social a {
+    color: #fff;
+    margin: 0 12px;
+    font-size: 1.4rem;
+    transition: color 0.3s ease;
+  }
+
+  footer .social a:hover {
+    color: #d4af37;
+  }
+
+  footer p {
+    margin-top: 15px;
+    font-size: 0.9rem;
+  }
+
+  footer p a {
+    color: #ccc;
+  }
+
+  footer p a:hover {
+    color: #d4af37;
+  }
+
+  /* ============================= */
+  /* Responsive */
+  @media (max-width: 768px) {
+    header.navbar {
+      flex-direction: column;
+      gap: 12px;
+      padding: 12px 5%;
+    }
+
+    .nav-links {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+    }
+
+    .flex-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
+</head>
+<body>
+<header class="navbar">
+  <div class="logo-container">
+    <img src="logo.png" alt="Viva Events Logo" class="logo" />
+  </div>
+  <div class="logo">Viva Events</div>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="packages.html" class="active">Packages</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="terms.html">Terms</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="services">
+  <h2>Our Packages</h2>
+  <div class="flex-container">
+    <div class="card">
+      <h3>Essential Package – $299</h3>
+      <p>Affordable elegance for small events.</p>
+      <ul>
+        <li>Balloon decoration (up to 60 balloons)</li>
+        <li>Simple balloon garland or clusters</li>
+        <li>Basic backdrop with text/name</li>
+        <li>Table centerpiece decoration</li>
+        <li>Delivery & setup in Sydney metro</li>
+      </ul>
+      <a href="contact.html" class="btn">Book Now</a>
+    </div>
+    <div class="card">
+      <h3>Classic Package – $599</h3>
+      <p>Stylish décor with more impact.</p>
+      <ul>
+        <li>Balloon arches & garlands (up to 120 balloons)</li>
+        <li>Custom backdrop & personalized text</li>
+        <li>Table & chair decorations</li>
+        <li>Small props or themed accents</li>
+        <li>Delivery, setup & pack down</li>
+      </ul>
+      <a href="contact.html" class="btn">Book Now</a>
+    </div>
+    <div class="card">
+      <h3>Premium Package – $999</h3>
+      <p>Full event styling for unforgettable moments.</p>
+      <ul>
+        <li>Large balloon installations (150+ balloons)</li>
+        <li>Custom backdrops & props</li>
+        <li>Coordinated table, chair & venue decorations</li>
+        <li>Theme consultation & personalized plan</li>
+        <li>Full delivery, setup, take-down & support</li>
+      </ul>
+      <a href="contact.html" class="btn">Book Now</a>
+    </div>
+    <div class="card">
+      <h3>Bespoke Package – From $1500</h3>
+      <p>Luxury fully customized event design.</p>
+      <ul>
+        <li>Customized design: balloons, florals, lighting & props</li>
+        <li>Dedicated stylist & planning consultation</li>
+        <li>Premium materials & unique décor</li>
+        <li>Full delivery, setup & pack down</li>
+        <li>On-site coordination on the event day</li>
+      </ul>
+      <a href="contact.html" class="btn">Book Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer role="contentinfo">
+  <div class="social">
+    <p class="connect">Connect with us</p>
+    <div>
+      <a
+        href="https://www.facebook.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Facebook"
+      >
+        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+      </a>
+      <a
+        href="https://www.instagram.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+      >
+        <i class="fab fa-instagram" aria-hidden="true"></i>
+      </a>
+      <a
+        href="https://www.tiktok.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="TikTok"
+      >
+        <i class="fab fa-tiktok" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+  <p>
+    <a href="terms.html">Terms & Conditions</a> | © 2025 Viva Events
+  </p>
+</footer>
+</body>
+</html>
